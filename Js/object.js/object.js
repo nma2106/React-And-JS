@@ -15,3 +15,6 @@ obj_2.greet = function(){
 
 console.log(obj_2)
 console.log(obj_2.greet)
+
+// we have learned how to create an object 
+
