@@ -18,3 +18,12 @@ console.log(obj_2.greet)
 
 // we have learned how to create an object 
 
+
+//now we will learn about accessing the object properties
+
+console.log(obj_1.name)
+
+//or we can call using 
+
+console.log(obj_1[["name"]])
+
