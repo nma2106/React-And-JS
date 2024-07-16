@@ -1,29 +1,43 @@
-//way 1 for creating object , here we directly comit  towards the values 
-let  obj_1  = {name:"Naman",age:23,add:"blr"}
-console.log(obj_1)
+// Constructor Method
+// Singleton are created in this 
 
-// the second way 
-// here we create an object as oops
-let obj_2 = new Object();
+const mysymb = Symbol("Key1");
 
-obj_2.id = 1;
-obj_2.name = "abc";
-obj_2.tag = 12.34;
-obj_2.greet = function(){
-    console.log("hello ");
-}
+// Object.create
 
-console.log(obj_2)
-console.log(obj_2.greet)
+// Object Literals
+const JsUser = {
+    name: "Naman",
+    age: "23",
+    isLoggedIn: "false",
+    [mysymb]: "myKey1",
+    "full name": "Naman Aryan"
+};
 
-// we have learned how to create an object 
+console.log(JsUser.age);
+console.log(JsUser["full name"]);
+console.log(JsUser[mysymb]);
 
+// Update age
+JsUser.age = "24";
 
-//now we will learn about accessing the object properties
+// Freeze the object
+Object.freeze(JsUser);
 
-console.log(obj_1.name)
+console.log(JsUser);
 
-//or we can call using 
+// Add greeting methods
+JsUser.greeting = function() {
+    console.log("Hello user");
+};
 
-console.log(obj_1[["name"]])
+console.log(JsUser.greeting());
 
+JsUser.greetingTwo = function() {
+
+    // HERE WE ARE USING BAPTICS INSTEAD OF STRINGS TO MANIPULATE IT 
+    console.log(`This age is: ${this.age}`);
+};
+
+// Call the greetingTwo method
+JsUser.greetingTwo();
